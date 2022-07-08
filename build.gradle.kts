@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import gg.essential.gradle.util.noServerRunConfigs
 
@@ -60,10 +62,12 @@ sourceSets {
 
 repositories {
     maven("https://repo.polyfrost.cc/releases")
+    maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
 }
 
 dependencies {
-    compileOnly("cc.polyfrost:oneconfig-1.8.9-forge:0.1.0-alpha26")
+    modRuntimeOnly("me.djtheredstoner:DevAuth-forge-legacy:1.1.0")
+    compileOnly("cc.polyfrost:oneconfig-1.8.9-forge:0.1.0-alpha50")
     shade("cc.polyfrost:oneconfig-wrapper-1.8.9-forge:1.0.0-alpha6")
 }
 
