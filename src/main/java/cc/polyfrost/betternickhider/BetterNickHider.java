@@ -43,8 +43,8 @@ public class BetterNickHider {
         config = new BNHConfig();
         config.initialize();
         nickCache = Caffeine.newBuilder().expireAfterWrite(600, TimeUnit.SECONDS).maximumSize(config.randomUsernameTableSize).build();
-        usernameListFile = new File(Profiles.getProfileDir(), "usernameList.txt");
-        friendsOverrideJsonFile = new File(Profiles.getProfileDir(), "friends_override.json");
+        usernameListFile = new File(Profiles.getProfileDir(), "betternickhider_usernameList.txt");
+        friendsOverrideJsonFile = new File(Profiles.getProfileDir(), "betternickhider_friends.json");
         try {
             if(friendsOverrideJsonFile.createNewFile()) {
                 generateFriendsJson();
